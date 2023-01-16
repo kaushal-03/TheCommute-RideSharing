@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+      <link rel="stylesheet" href="find.css">
+      <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAoFxxw7mkroNKUI17MbquTxdtACcIUzLo&libraries=places"></script>
+  </head>
+  <body>
+    <div class="form">
+      <form method = "post">
+      <input id ='source'type="text" name="source"  onfocus="this.value=''"value="From" style="height:30px ; width:250px"><br>
+      <input id="destination"type="text" name="destination"   onfocus="this.value=''" value="To" style="margin-top:10% ; height:30px ; width:250px"><br>
+      <input type="date" id="birthday" name="birthday" style="margin-top:10% ; height:30px ; width:150px">
+      <input id="btn" type="submit" name="" value="Search"  style="width:80px ; height:30px">
+      </form>
+
+  </div>
+  <script>
+    var input = document.getElementById('source');
+    var autocomplete = new google.maps.places.Autocomplete(input,{types: ['(cities)']});
+    google.maps.event.addListener(autocomplete, 'place_changed', function(){
+    var place = autocomplete.getPlace();
+    })   
+  </script>
+  <img id='map' src="phone.svg" alt="">
+  <h2 id='q1'>Ready, set, go<br />in just a few quick taps</h2>
+  <h3 id='q2'>Your safety comes first. Always.</h3>
+
+  <h4 id='sc'>schedule</h4>
+  <h4 id='fr'>flat-rate</h4>
+  <h4 id='sa'>safe</h4>
+  </body>
+</html>
